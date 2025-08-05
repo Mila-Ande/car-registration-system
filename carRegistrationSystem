@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std
+
+const int MaximumCars = 50;
+
+void RegisterACar (string carRegistration[], string driversLicense[], int numberOfCars) {
+	cout << “Enter the details of the car you want to register: ” <<endl;
+
+	for (int x = 0; x < numberOfCars; ++x){
+		cout << “Car: ” << x + 1<<std ::endl;
+		cout << “Please enter the driver’s license number: “
+		cin >> driversLicense[x];
+		cout << “Please enter the car registration number:”
+		cin >> carRegistration[x];
+	}
+	
+	cout << “All the cars have been registered successfully! ” << endl;
+}
+
+int main() {
+	string carRegistration[MaximumCars];
+	string driverLicense[MaximumCars]
+	int choice;
+	int numberOfCars = 0;
+do {
+	cout << “Menu: ” <<std::endl;
+	cout << “1. Add the car registration “ <<endl;
+	cout<<”2. Leave the program” <<endl;
+	cout<<”Please enter your choice”;
+	cin >> choice;
+
+	switch (choice) {
+		case 1: 
+			 cout << “How many do you want to register? ”
+			cin >> numberOfCars;
+
+			if (numberOfCars > 0 && numberOfCars <= MaximumCars){
+				RegisterACar(carRegistration, driverLicense, numberOfCars);
+			} else {
+				cout << “You entered an invalid number of cars!” << endl;
+			}
+			break;
+		
+		case 2: 
+			cout << “Leaving the program…”<< endl;
+			break;
+		
+		default:
+			cout << “That’s an invalid choice!” << endl;
+
+}
+		cout << endl;
+} while (choice != 2);
+
+return 0;
+}
+
